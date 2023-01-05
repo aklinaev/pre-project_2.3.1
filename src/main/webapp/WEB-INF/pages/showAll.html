@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+        }
+        .button {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+        }
+    </style>
 </head>
 <body>
-
-<div th:each="user : ${users}">
-    <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
-</div>
-
+        <div th:each="user : ${users}">
+            <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
+        </div>
 <br/>
 <hr/>
-
-<a href="/users/new">Create new person</a>
-
+<button class="button">
+    <a href="/users/new">Create new person</a>
+</button>>
 </body>
 </html>

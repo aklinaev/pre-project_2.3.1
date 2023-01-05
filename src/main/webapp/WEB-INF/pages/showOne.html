@@ -3,16 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Show</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    .button {
+      background-color: green;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+
+    }
+  </style>
 </head>
 <body>
-<p th:text="${user.getName()}">VALUE</p>
-<p th:text="${user.getAge()}">VALUE</p>
-<p th:text="${user.getId()}">VALUE</p>
-
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>AGE</th>
+  </tr>
+  <tr>
+    <td><p th:text="${user.getId()}">VALUE</p></td>
+    <td><p th:text="${user.getName()}">VALUE</p></td>
+    <td><p th:text="${user.getAge()}">VALUE</p></td>
+  </tr>
+  </table>
+<button class="button">
 <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+</button>
 
+<button class="button">
 <form th:method="POST" th:action="@{/users/{id}/delete(id=${user.getId()})}">
   <input type="submit" value="Delete"/>
+</button>
 </form>
 </body>
 </html>

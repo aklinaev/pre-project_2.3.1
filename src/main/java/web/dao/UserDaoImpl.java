@@ -1,5 +1,6 @@
 package web.dao;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
@@ -49,4 +50,6 @@ public class UserDaoImpl implements UserDao {
         manager.getTransaction().commit();
         return updatedUser;
     }
+
+
 }
