@@ -40,11 +40,11 @@
   </tr>
   </table>
 <button class="button">
-<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+<a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a>
 </button>
 
 <button class="button">
-<form th:method="POST" th:action="@{/users/{id}/delete(id=${user.getId()})}">
+<form th:method="POST" th:action="@{/{id}/delete(id=${user.getId()})}">
   <input type="submit" value="Delete"/>
 </button>
 </form>

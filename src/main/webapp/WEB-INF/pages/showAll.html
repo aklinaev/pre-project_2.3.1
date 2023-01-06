@@ -28,12 +28,12 @@
 </head>
 <body>
         <div th:each="user : ${users}">
-            <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
+            <a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
         </div>
 <br/>
 <hr/>
 <button class="button">
-    <a href="/users/new">Create new person</a>
+    <a href="/new">Create new person</a>
 </button>>
 </body>
 </html>
